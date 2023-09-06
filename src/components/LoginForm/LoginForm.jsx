@@ -18,7 +18,7 @@ export const LoginForm = () => {
           <Input />
         </Label>
 
-        <Button type="submit">Registrate</Button>
+        <Button type="submit">Log in</Button>
       </Form>
     </>
   );
