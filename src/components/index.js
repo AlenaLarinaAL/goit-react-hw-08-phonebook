@@ -11,3 +11,4 @@ export * from './Loader/Loader';
 export * from './Navigation/Navigation';
 export * from './RegestrationForm/RegestrationForm';
 export * from './LoginForm/LoginForm';
+export * from './UserMenu/UserMenu';
