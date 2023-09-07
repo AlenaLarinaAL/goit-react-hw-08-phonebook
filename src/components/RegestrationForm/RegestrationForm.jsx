@@ -36,7 +36,9 @@ export const RegestrationForm = () => {
         <Input name="password" type="password" minlength="7" />
       </Label>
 
-      <Button type="submit">Registrate</Button>
+      <Button type="submit" onClick={() => dispatch(register())}>
+        Registrate
+      </Button>
     </Form>
   );
 };
