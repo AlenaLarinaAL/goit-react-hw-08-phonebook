@@ -5,7 +5,7 @@ import { useAuth } from 'hooks';
 import { useEffect, lazy } from 'react';
 import { useDispatch } from 'react-redux';
 
-import { Navigate, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import { refreshUser } from 'store/auth/authOperations';
 
 const HomePage = lazy(() => import('../pages/HomePage/HomePage'));
@@ -20,6 +20,7 @@ export const App = () => {
   useEffect(() => {
     dispatch(refreshUser());
   }, [dispatch]);
+
   return (
     <>
       {isRefreshing ? (
@@ -55,7 +56,6 @@ export const App = () => {
                 />
               }
             />
-            <Route path="*" element={<Navigate to="/" />} />
           </Route>
         </Routes>
       )}

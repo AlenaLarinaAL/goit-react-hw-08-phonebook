@@ -10,12 +10,6 @@ const handleRejected = (state, action) => {
   state.error = action.payload;
 };
 
-// const initialState = {
-//   contacts: [],
-//   isLoading: false,
-//   error: null,
-// };
-
 const contactsSlice = createSlice({
   name: 'contacts',
   initialState: {
