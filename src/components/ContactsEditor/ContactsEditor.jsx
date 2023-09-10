@@ -1,17 +1,16 @@
+import { useDispatch, useSelector } from 'react-redux';
 import { Form, Button, Input, Label } from './ContactsEditor.styled';
 
-import {
-  useCreateContactMutation,
-  useFetchContactsQuery,
-} from 'store/contacts/contactsSlice';
-
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
+import { selectAll } from 'store/contacts/contactsSelector';
+import { addContact } from 'store/contacts/contactsOperations';
+import { nanoid } from '@reduxjs/toolkit';
 
 export const ContactsEditor = () => {
-  const [createContact, { isLoading }] = useCreateContactMutation();
-  const { data: contacts } = useFetchContactsQuery();
+  const dispatch = useDispatch();
+  const contacts = useSelector(selectAll);
 
-  const handleSubmit = async event => {
+  const handleSubmit = event => {
     event.preventDefault();
 
     const name = event.target.elements.name.value;
@@ -26,13 +25,9 @@ export const ContactsEditor = () => {
       event.target.reset();
       return;
     }
+    dispatch(addContact({ name, number, id: nanoid(5) }));
 
-    try {
-      await createContact({ name, number });
-      Notify.success('Contact successfully added!');
-    } catch (error) {
-      Notify.failure('Oops! Something went wrong:(');
-    }
+    Notify.success('Contact successfully added!');
 
     event.target.reset();
   };
@@ -61,9 +56,7 @@ export const ContactsEditor = () => {
         />
       </Label>
 
-      <Button type="submit" disabled={isLoading}>
-        Add contact
-      </Button>
+      <Button type="submit">Add contact</Button>
     </Form>
   );
 };

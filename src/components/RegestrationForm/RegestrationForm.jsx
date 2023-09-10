@@ -15,7 +15,7 @@ export const RegestrationForm = () => {
         password: form.elements.password.value,
       })
     );
-    console.log(form.elements.name.value);
+
     form.reset();
   };
 
