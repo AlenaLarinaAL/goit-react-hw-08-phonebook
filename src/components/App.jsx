@@ -5,7 +5,7 @@ import { useAuth } from 'hooks';
 import { useEffect, lazy } from 'react';
 import { useDispatch } from 'react-redux';
 
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import { refreshUser } from 'store/auth/authOperations';
 
 const HomePage = lazy(() => import('../pages/HomePage/HomePage'));
@@ -56,6 +56,7 @@ export const App = () => {
                 />
               }
             />
+            <Route path="*" element={<Navigate to="/" />} />
           </Route>
         </Routes>
       )}
