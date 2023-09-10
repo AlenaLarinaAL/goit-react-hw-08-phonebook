@@ -1,12 +1,17 @@
-import { Section, ContactsList, ContactsEditor, Filter } from 'components';
+import { ContactsList, ContactsEditor, Filter } from 'components';
+import { Section } from 'components/Section/Section';
+import { Helmet } from 'react-helmet';
 
 const ContactsPage = () => {
   return (
     <>
-      <Section title="PhoneBook">
+      <Helmet>
+        <title>Contacts</title>
+      </Helmet>
+      <Section>
         <ContactsEditor />
       </Section>
-      <Section title="Contacts">
+      <Section>
         <Filter />
         <ContactsList />
       </Section>

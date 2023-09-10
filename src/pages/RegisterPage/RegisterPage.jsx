@@ -1,9 +1,13 @@
-import { Section, RegestrationForm } from 'components';
+import { RegestrationForm, Section } from 'components';
+import { Helmet } from 'react-helmet';
 
 const RegisterPage = () => {
   return (
     <>
-      <Section title="Registration">
+      <Helmet>
+        <title>Registration</title>
+      </Helmet>
+      <Section>
         <RegestrationForm />
       </Section>
     </>

@@ -1,9 +1,13 @@
-import { Section, LoginForm } from 'components';
+import { LoginForm, Section } from 'components';
+import { Helmet } from 'react-helmet';
 
 const LoginPage = () => {
   return (
     <>
-      <Section title="Log in">
+      <Helmet>
+        <title>log in</title>
+      </Helmet>
+      <Section>
         <LoginForm />
       </Section>
     </>

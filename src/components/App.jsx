@@ -28,7 +28,6 @@ export const App = () => {
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<HomePage />} />
-
             <Route
               path="register"
               element={
@@ -47,14 +46,17 @@ export const App = () => {
                 />
               }
             />
+            <Route
+              path="/contacts"
+              element={
+                <PrivateRoute
+                  redirectTo="/login"
+                  component={<ContactsPage />}
+                />
+              }
+            />
+            <Route path="*" element={<Navigate to="/" />} />
           </Route>
-          <Route
-            path="/contacts"
-            element={
-              <PrivateRoute redirectTo="/login" component={<ContactsPage />} />
-            }
-          />
-          {/* <Route path="*" element={<Navigate to="/" />} /> */}
         </Routes>
       )}
     </>

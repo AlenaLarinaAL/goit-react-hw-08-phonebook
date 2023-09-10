@@ -6,7 +6,7 @@ export const Container = styled.section`
   margin-right: auto;
   padding: 15px 20px;
 `;
-export const Title = styled.h2`
-  text-align: center;
-  margin-bottom: 20px;
-`;
+// export const Title = styled.h2`
+//   text-align: center;
+//   margin-bottom: 20px;
+// `;

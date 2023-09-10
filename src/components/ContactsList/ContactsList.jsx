@@ -1,10 +1,10 @@
 import { List, Item, Span, Button } from './ContactsList.styled';
 import { MdDelete } from 'react-icons/md';
-import { filterContacts, selectContacts } from 'store/selectors/selectors';
+import { filterContacts } from 'store/selectors/selectors';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { Spinner } from 'components/Loader/Loader';
-import { Notify } from 'notiflix';
+// import { Notify } from 'notiflix';
 import { selectAll, selectLoading } from 'store/contacts/contactsSelector';
 import { deleteContact } from 'store/contacts/contactsOperations';
 
