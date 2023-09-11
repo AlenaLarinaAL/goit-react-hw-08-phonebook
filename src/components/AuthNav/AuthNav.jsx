@@ -5,8 +5,8 @@ export const AuthNav = () => {
   return (
     <>
       <Auth>
-        <NavLinkStyled to="/register">Registration</NavLinkStyled>
-        <NavLinkStyled to="/login">Log In</NavLinkStyled>
+        <NavLinkStyled to="/register">Sign up</NavLinkStyled>
+        <NavLinkStyled to="/login">Sign In</NavLinkStyled>
       </Auth>
     </>
   );

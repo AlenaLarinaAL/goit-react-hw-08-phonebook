@@ -10,7 +10,7 @@ export const ContactsEditor = () => {
   const dispatch = useDispatch();
   const contacts = useSelector(selectAll);
 
-  const handleSubmit = event => {
+  const handleSubmit = async event => {
     event.preventDefault();
 
     const name = event.target.elements.name.value;
@@ -25,9 +25,13 @@ export const ContactsEditor = () => {
       event.target.reset();
       return;
     }
-    dispatch(addContact({ name, number, id: nanoid(5) }));
 
-    Notify.success('Contact successfully added!');
+    try {
+      dispatch(addContact({ name, number, id: nanoid(5) })).unwrap();
+      Notify.success('Contact successfully added!');
+    } catch (error) {
+      Notify.error('Something went wrong:(');
+    }
 
     event.target.reset();
   };

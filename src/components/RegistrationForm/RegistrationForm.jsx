@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { Button, Form, Input, Label } from './RegestrationForm.styled';
+import { Button, Form, Input, Label } from './RegistrationForm.styled';
 import { register } from 'store/auth/authOperations';
 
 export const RegestrationForm = () => {
@@ -23,12 +23,12 @@ export const RegestrationForm = () => {
     <Form onSubmit={handleSubmit}>
       <Label>
         Name
-        <Input name="name" type="text" />
+        <Input name="name" type="text" required />
       </Label>
 
       <Label>
         Email
-        <Input name="email" type="email" />
+        <Input name="email" type="email" required />
       </Label>
 
       <Label>
@@ -36,7 +36,7 @@ export const RegestrationForm = () => {
         <Input name="password" type="password" minlength="7" />
       </Label>
 
-      <Button type="submit">Registrate</Button>
+      <Button type="submit">Sign up</Button>
     </Form>
   );
 };

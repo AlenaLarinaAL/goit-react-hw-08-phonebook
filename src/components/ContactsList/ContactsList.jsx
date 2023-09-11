@@ -1,10 +1,8 @@
 import { List, Item, Span, Button } from './ContactsList.styled';
 import { MdDelete } from 'react-icons/md';
-import { filterContacts } from 'store/selectors/selectors';
-
+import { filterContacts } from 'store/filter/filterSelector';
 import { useDispatch, useSelector } from 'react-redux';
-import { Spinner } from 'components/Loader/Loader';
-// import { Notify } from 'notiflix';
+import { Spinner, Notification } from 'components';
 import { selectAll, selectLoading } from 'store/contacts/contactsSelector';
 import { deleteContact } from 'store/contacts/contactsOperations';
 
@@ -38,7 +36,7 @@ export const ContactsList = () => {
             ))}
           </>
         ) : (
-          <p>No contacts</p>
+          <Notification message="No contacts" />
         )}
       </List>
     </>

@@ -1,5 +1,6 @@
-import { Section } from 'components';
+import { Home, Section } from 'components';
 import { Helmet } from 'react-helmet';
+// import { Title } from './HomePage.styled';
 
 const HomePage = () => {
   return (
@@ -8,7 +9,7 @@ const HomePage = () => {
         <title>Home</title>
       </Helmet>
       <Section>
-        <div>HomePage </div>
+        <Home />
       </Section>
     </>
   );
